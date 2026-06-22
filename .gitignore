@@ -1,0 +1,85 @@
+# Compiled Java files
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven build directory
+target/
+*.log
+
+# IDE specific files
+.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+.vscode/
+*.code-workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Database files (optional - comment out if you want to include database)
+*.lck
+*.log
+*.properties
+*.script
+*.tmp
+*.db
+*.accdb
+*.mdb
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# Maven wrapper (optional - keep if using wrapper)
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# Test output
+surefire-reports/
+test-output/
+
+# Logs
+logs/
+*.log
+
+# Application specific
+bankdata.*
+firstbank.accdb
+
+# User-specific files
+*.userprefs
+*.launch
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+
+# Java heap dumps
+*.hprof
+
+# Maven local repository (usually not in project)
+repository/
+
+# Node modules (if any)
+node_modules/
+
+# System files
+*.tmp
+*.temp
