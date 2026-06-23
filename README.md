@@ -8,7 +8,6 @@ A complete JavaFX desktop application for opening bank accounts at First Bank Ug
 Name	                                                  Role
 Walusimbi Abaasi	                                 Lead Developer
 Owomugisha Nobert	                                    Developer
-Bakasinga Gerald	                                    Developer
 Mutekanga Marvin	                                    Developer
 Bbanga Samuel Emmanuel	                                Developer
 Nabwire Jesca Recheal	                                Developer
