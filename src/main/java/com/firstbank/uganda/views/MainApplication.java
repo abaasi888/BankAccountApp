@@ -62,70 +62,110 @@ public class MainApplication extends Application {
         grid.setStyle(UIConstants.getCardStyle());
 
         int row = 0;
+
+        // Personal Information Section
         Label personalLabel = new Label("Personal Information");
-        personalLabel.setStyle(UIConstants.getHeaderStyle());
-        personalLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        personalLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #003366;");
         GridPane.setColumnSpan(personalLabel, 4);
         grid.add(personalLabel, 0, row++);
 
+        // Row: First Name + Last Name
         grid.add(new Label("First Name:"), 0, row);
-        firstNameField = new TextField(); firstNameField.setPromptText("Enter first name"); firstNameField.setPrefWidth(200);
+        firstNameField = new TextField();
+        firstNameField.setPromptText("Enter first name");
+        firstNameField.setPrefWidth(200);
         grid.add(firstNameField, 1, row);
+
         grid.add(new Label("Last Name:"), 2, row);
-        lastNameField = new TextField(); lastNameField.setPromptText("Enter last name");
+        lastNameField = new TextField();
+        lastNameField.setPromptText("Enter last name");
+        lastNameField.setPrefWidth(200);
         grid.add(lastNameField, 3, row++);
 
+        // Row: NIN + Phone
         grid.add(new Label("NIN:"), 0, row);
-        ninField = new TextField(); ninField.setPromptText("14 alphanumeric characters"); ninField.setPrefWidth(200);
+        ninField = new TextField();
+        ninField.setPromptText("14 alphanumeric characters");
+        ninField.setPrefWidth(200);
         grid.add(ninField, 1, row);
+
         grid.add(new Label("Phone:"), 2, row);
-        phoneField = new TextField(); phoneField.setPromptText("+256XXXXXXXXXX");
+        phoneField = new TextField();
+        phoneField.setPromptText("+256XXXXXXXXX");
+        phoneField.setPrefWidth(200);
         grid.add(phoneField, 3, row++);
 
+        // Row: Email + Confirm Email
         grid.add(new Label("Email:"), 0, row);
-        emailField = new TextField(); emailField.setPromptText("Enter email"); emailField.setPrefWidth(200);
+        emailField = new TextField();
+        emailField.setPromptText("Enter email");
+        emailField.setPrefWidth(200);
         grid.add(emailField, 1, row);
+
         grid.add(new Label("Confirm Email:"), 2, row);
-        confirmEmailField = new TextField(); confirmEmailField.setPromptText("Re-enter email");
+        confirmEmailField = new TextField();
+        confirmEmailField.setPromptText("Re-enter email");
+        confirmEmailField.setPrefWidth(200);
         grid.add(confirmEmailField, 3, row++);
 
+        // Row: PIN + Confirm PIN
         grid.add(new Label("PIN:"), 0, row);
-        pinField = new PasswordField(); pinField.setPromptText("4-6 digits");
+        pinField = new PasswordField();
+        pinField.setPromptText("4-6 digits");
+        pinField.setPrefWidth(200);
         grid.add(pinField, 1, row);
+
         grid.add(new Label("Confirm PIN:"), 2, row);
-        confirmPinField = new PasswordField(); confirmPinField.setPromptText("Re-enter PIN");
+        confirmPinField = new PasswordField();
+        confirmPinField.setPromptText("Re-enter PIN");
+        confirmPinField.setPrefWidth(200);
         grid.add(confirmPinField, 3, row++);
 
-        grid.add(new Separator(), 0, row++);
-        GridPane.setColumnSpan(new Separator(), 4);
+        // Separator
+        Separator separator = new Separator();
+        GridPane.setColumnSpan(separator, 4);
+        grid.add(separator, 0, row++);
 
+        // Date of Birth Section
         Label dobLabel = new Label("Date of Birth");
-        dobLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        dobLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #003366;");
         GridPane.setColumnSpan(dobLabel, 4);
         grid.add(dobLabel, 0, row++);
-        grid.add(new Label("Year:"), 0, row);
-        yearCombo = new ComboBox<>(); yearCombo.setPrefWidth(120);
-        grid.add(yearCombo, 1, row);
-        grid.add(new Label("Month:"), 2, row);
-        monthCombo = new ComboBox<>(); monthCombo.setPrefWidth(120);
-        grid.add(monthCombo, 3, row++);
-        grid.add(new Label("Day:"), 0, row);
-        dayCombo = new ComboBox<>(); dayCombo.setPrefWidth(120);
-        grid.add(dayCombo, 1, row);
-        grid.add(new Separator(), 0, row++);
-        GridPane.setColumnSpan(new Separator(), 4);
 
+        grid.add(new Label("Year:"), 0, row);
+        yearCombo = new ComboBox<>();
+        yearCombo.setPrefWidth(120);
+        grid.add(yearCombo, 1, row);
+
+        grid.add(new Label("Month:"), 2, row);
+        monthCombo = new ComboBox<>();
+        monthCombo.setPrefWidth(120);
+        grid.add(monthCombo, 3, row++);
+
+        grid.add(new Label("Day:"), 0, row);
+        dayCombo = new ComboBox<>();
+        dayCombo.setPrefWidth(120);
+        grid.add(dayCombo, 1, row);
+
+        // Separator
+        Separator separator2 = new Separator();
+        GridPane.setColumnSpan(separator2, 4);
+        grid.add(separator2, 0, row++);
+
+        // Account Details Section
         Label accountLabel = new Label("Account Details");
-        accountLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+        accountLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #003366;");
         GridPane.setColumnSpan(accountLabel, 4);
         grid.add(accountLabel, 0, row++);
 
+        // Row: Account Type + Branch
         grid.add(new Label("Account Type:"), 0, row);
         accountTypeCombo = new ComboBox<>();
         accountTypeCombo.getItems().addAll("Savings", "Current", "Fixed Deposit", "Student", "Joint");
         accountTypeCombo.setPromptText("Select account type");
         accountTypeCombo.setPrefWidth(200);
         grid.add(accountTypeCombo, 1, row);
+
         grid.add(new Label("Branch:"), 2, row);
         branchCombo = new ComboBox<>();
         branchCombo.getItems().addAll("Kampala", "Gulu", "Mbarara", "Jinja", "Mbale");
@@ -133,10 +173,14 @@ public class MainApplication extends Application {
         branchCombo.setPrefWidth(200);
         grid.add(branchCombo, 3, row++);
 
+        // Row: Opening Deposit
         grid.add(new Label("Opening Deposit (UGX):"), 0, row);
-        depositField = new TextField(); depositField.setPromptText("Enter deposit amount"); depositField.setPrefWidth(200);
+        depositField = new TextField();
+        depositField.setPromptText("Enter deposit amount");
+        depositField.setPrefWidth(200);
         grid.add(depositField, 1, row);
 
+        // Status Label
         statusLabel = new Label("");
         statusLabel.setStyle(UIConstants.getErrorStyle());
         GridPane.setColumnSpan(statusLabel, 4);
@@ -148,19 +192,29 @@ public class MainApplication extends Application {
         scrollPane.setStyle("-fx-background-color: transparent;");
         mainLayout.setCenter(scrollPane);
 
-        // Bottom
+        // Bottom Section
         VBox bottomBox = new VBox(10);
         bottomBox.setPadding(new Insets(20, 0, 0, 0));
 
         HBox buttonBox = new HBox(20);
         buttonBox.setAlignment(Pos.CENTER);
+
         Button submitBtn = new Button("Submit Application");
-        submitBtn.setStyle("-fx-background-color: #003366; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 30;");
+        submitBtn.setStyle("-fx-background-color: #003366; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 30; -fx-border-radius: 4px; -fx-background-radius: 4px;");
         submitBtn.setOnAction(e -> handleSubmit());
+
         Button resetBtn = new Button("Reset Form");
-        resetBtn.setStyle("-fx-background-color: #666666; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 30;");
+        resetBtn.setStyle("-fx-background-color: #666666; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 30; -fx-border-radius: 4px; -fx-background-radius: 4px;");
         resetBtn.setOnAction(e -> resetForm());
-        buttonBox.getChildren().addAll(submitBtn, resetBtn);
+
+        Button analyticsBtn = new Button("📊 View Analytics");
+        analyticsBtn.setStyle("-fx-background-color: #2E7D32; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 30; -fx-border-radius: 4px; -fx-background-radius: 4px;");
+        analyticsBtn.setOnAction(e -> {
+            AnalyticsView analytics = new AnalyticsView(dbController);
+            analytics.show();
+        });
+
+        buttonBox.getChildren().addAll(submitBtn, resetBtn, analyticsBtn);
         bottomBox.getChildren().add(buttonBox);
 
         Label summaryLabel = new Label("Account Summary is Below:");
@@ -168,7 +222,8 @@ public class MainApplication extends Application {
         summaryArea = new TextArea();
         summaryArea.setEditable(false);
         summaryArea.setPrefHeight(150);
-        summaryArea.setStyle("-fx-font-family: 'Courier New'; -fx-font-size: 12px;");
+        summaryArea.setStyle("-fx-font-family: 'Courier New'; -fx-font-size: 12px; -fx-background-color: #F9F9F9; -fx-border-color: #DDDDDD;");
+        summaryArea.setPromptText("Account summary will appear here after successful submission...");
         bottomBox.getChildren().addAll(summaryLabel, summaryArea);
         mainLayout.setBottom(bottomBox);
 
@@ -177,20 +232,54 @@ public class MainApplication extends Application {
         primaryStage.show();
 
         // Setup comboboxes
+        setupComboBoxes();
+    }
+
+    private void setupComboBoxes() {
+        // Year ComboBox
         int currentYear = DateUtils.getCurrentYear();
-        for (int y = currentYear - 100; y <= currentYear; y++) yearCombo.getItems().add(y);
+        for (int y = currentYear - 100; y <= currentYear; y++) {
+            yearCombo.getItems().add(y);
+        }
         yearCombo.setValue(currentYear);
-        for (int m = 1; m <= 12; m++) monthCombo.getItems().add(m);
+
+        // Month ComboBox
+        for (int m = 1; m <= 12; m++) {
+            monthCombo.getItems().add(m);
+        }
         monthCombo.setValue(1);
+
+        // Day ComboBox
         updateDays(1, currentYear);
-        monthCombo.setOnAction(e -> { Integer m = monthCombo.getValue(), y = yearCombo.getValue(); if (m != null && y != null) updateDays(m, y); });
-        yearCombo.setOnAction(e -> { Integer m = monthCombo.getValue(), y = yearCombo.getValue(); if (m != null && y != null) updateDays(m, y); });
+
+        // Month change listener
+        monthCombo.setOnAction(e -> {
+            Integer m = monthCombo.getValue();
+            Integer y = yearCombo.getValue();
+            if (m != null && y != null) {
+                updateDays(m, y);
+            }
+        });
+
+        // Year change listener
+        yearCombo.setOnAction(e -> {
+            Integer m = monthCombo.getValue();
+            Integer y = yearCombo.getValue();
+            if (m != null && y != null) {
+                updateDays(m, y);
+            }
+        });
     }
 
     private void updateDays(int month, int year) {
         dayCombo.getItems().clear();
-        for (int d = 1; d <= DateUtils.getDaysInMonth(month, year); d++) dayCombo.getItems().add(d);
-        if (!dayCombo.getItems().isEmpty()) dayCombo.setValue(1);
+        int days = DateUtils.getDaysInMonth(month, year);
+        for (int d = 1; d <= days; d++) {
+            dayCombo.getItems().add(d);
+        }
+        if (!dayCombo.getItems().isEmpty()) {
+            dayCombo.setValue(1);
+        }
     }
 
     private void handleSubmit() {
@@ -203,7 +292,9 @@ public class MainApplication extends Application {
             String phone = phoneField.getText().trim();
             String pin = pinField.getText().trim();
             String confirmPin = confirmPinField.getText().trim();
-            Integer year = yearCombo.getValue(), month = monthCombo.getValue(), day = dayCombo.getValue();
+            Integer year = yearCombo.getValue();
+            Integer month = monthCombo.getValue();
+            Integer day = dayCombo.getValue();
             String accountType = accountTypeCombo.getValue();
             String branch = branchCombo.getValue();
             String depositStr = depositField.getText().trim();
@@ -233,10 +324,10 @@ public class MainApplication extends Application {
 
             // Save to database
             boolean saved = dbController.saveAccount(account);
-            
+
             String summary = account.getAccountSummary() + "\n\n" + result.getSummary();
             if (saved) {
-                summary += "\n\n✅ Account saved to database successfully!";
+                summary += "\n\n✅ Account saved to MS Access database successfully!";
                 statusLabel.setText("✓ Application submitted and saved to database!");
                 statusLabel.setStyle(UIConstants.getSuccessStyle());
             } else {
@@ -244,11 +335,11 @@ public class MainApplication extends Application {
                 statusLabel.setText("⚠️ Application submitted but database not connected!");
                 statusLabel.setStyle("-fx-text-fill: #FF9800; -fx-font-weight: bold;");
             }
-            
+
             summaryArea.setText(summary);
             pinField.clear();
             confirmPinField.clear();
-            
+
         } catch (NumberFormatException e) {
             showError("Opening Deposit must be a valid number.");
         } catch (Exception e) {
@@ -267,16 +358,28 @@ public class MainApplication extends Application {
     }
 
     private void resetForm() {
-        firstNameField.clear(); lastNameField.clear(); ninField.clear();
-        emailField.clear(); confirmEmailField.clear(); phoneField.clear();
-        pinField.clear(); confirmPinField.clear(); depositField.clear();
+        firstNameField.clear();
+        lastNameField.clear();
+        ninField.clear();
+        emailField.clear();
+        confirmEmailField.clear();
+        phoneField.clear();
+        pinField.clear();
+        confirmPinField.clear();
+        depositField.clear();
         summaryArea.clear();
-        accountTypeCombo.setValue(null); branchCombo.setValue(null);
-        yearCombo.setValue(DateUtils.getCurrentYear()); monthCombo.setValue(1);
+        accountTypeCombo.setValue(null);
+        branchCombo.setValue(null);
+        yearCombo.setValue(DateUtils.getCurrentYear());
+        monthCombo.setValue(1);
         updateDays(1, DateUtils.getCurrentYear());
         statusLabel.setText("");
     }
 
     @Override
-    public void stop() { if (dbController != null) dbController.close(); }
+    public void stop() {
+        if (dbController != null) {
+            dbController.close();
+        }
+    }
 }

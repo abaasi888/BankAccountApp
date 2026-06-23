@@ -1,5 +1,4 @@
 -- First Bank Uganda Database Schema
--- As required by Question Paper
 
 CREATE TABLE Accounts (
     id AUTOINCREMENT PRIMARY KEY,
