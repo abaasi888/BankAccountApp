@@ -14,8 +14,6 @@ Muwonge Fazil	Developer
 Musumba Andrew Rodney	Developer
 Waiswa Martin	Developer
 Roland	Developer
-📅 Date
-22nd June 2026
 
 🛠️ Technologies Used
 Technology	Purpose
@@ -58,9 +56,7 @@ DOB	Age 18-75 (18-25 for Student accounts)
 Opening Deposit	Meets minimum for selected account type
 Account Type	Must be selected
 Branch	Must be selected
-📱 Contact
-Lead Developer: Walusimbi Abaasi
-Email: abaasiwaaissimom@gmail.com
+
 
 🚀 How to Run
 Prerequisites
@@ -73,7 +69,7 @@ Microsoft Access (for database)
 Steps
 bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git clone https://github.com/abaasi888/BankAccountApp
 cd BankAccountApp
 
 # Ensure MS Access database is in the correct location
@@ -112,12 +108,12 @@ Moderator	Mr. Bazigu Alex
 Database Connection Issues
 Ensure firstbank.accdb is in:
 
-text
+
 src/main/resources/database/firstbank.accdb
 UCanAccess Errors
 Place all required JARs in the lib/ folder:
 
-text
+
 lib/
 ├── ucanaccess-5.0.1.jar
 ├── jackcess-4.0.4.jar
